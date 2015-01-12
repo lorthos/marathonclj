@@ -6,13 +6,13 @@ A simple Clojure client for the marathon rest api
 
 FIXME
 
-## Imlemented
+## Implemented so far
 
-+get-apps
-+get-app
-+delete-app
-+create-app
-+metrics
++ get-apps
++ get-app
++ delete-app
++ create-app
++ metrics
 
 ## License
 
