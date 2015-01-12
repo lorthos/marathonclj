@@ -1,6 +1,6 @@
-(ns marathon-clojure.core-test
+(ns marathonclj.core-test
   (:require [clojure.test :refer :all]
-            [marathon-clojure.core :refer :all]))
+            [marathonclj.rest :refer :all]))
 
 (deftest a-test
   (testing "FIXME, I fail."

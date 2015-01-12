@@ -1,10 +1,18 @@
-# marathon-clojure
+# marathonclj
 
-A Clojure library designed to ... well, that part is up to you.
+A simple Clojure client for the marathon rest api
 
 ## Usage
 
 FIXME
+
+## Imlemented
+
++get-apps
++get-app
++delete-app
++create-app
++metrics
 
 ## License
 
