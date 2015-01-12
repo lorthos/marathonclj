@@ -12,6 +12,11 @@ FIXME
 + get-app
 + delete-app
 + create-app
++ versions
++ version
+
+
+
 + metrics
 
 ##TODO

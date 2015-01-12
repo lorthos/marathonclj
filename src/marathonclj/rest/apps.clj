@@ -42,3 +42,24 @@
   (create-app (Connection. "http://localhost:8080" {})
               (read-string (slurp "resources/app-descriptor1.edn")))
   )
+
+(defn versions
+  "GET /v2/apps/{appId}/versions"
+  [^Connection conn ^String app-id]
+  (r/get conn (r/url-with-path conn "v2" "apps" app-id "versions")))
+
+(comment
+  (versions (Connection. "http://localhost:8080" {}) "001")
+  )
+
+(defn version
+  "GET /v2/apps/{appId}/versions/{version}"
+  [^Connection conn ^String app-id ^String version]
+  (r/get conn (r/url-with-path conn "v2" "apps" app-id "versions" version)))
+
+(comment
+  (version (Connection. "http://localhost:8080" {}) "001" "2015-01-12T21:17:41.851Z")
+  )
+
+(defn restart
+  )
