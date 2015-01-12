@@ -30,7 +30,7 @@
     (http/with-middleware patch/middleware
                           (json/decode (:body (http/post uri
                                                          (merge (.http-opts conn) options
-                                                                {:body (json/encode body)})
+                                                                {:accept :json :content-type :json :body (json/encode body)})
                                                          )) true)
                           )))
 

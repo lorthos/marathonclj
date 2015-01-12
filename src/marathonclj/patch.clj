@@ -1,12 +1,13 @@
 (ns marathonclj.patch
-  (:require [clj-http.client :as http]))
+  (:require [clj-http.client :as http]
+            [clojure.pprint :as pp]))
 
 
 (defn wrapex
   [client]
   (fn [req]
     (let [{:keys [status] :as resp} (client req)]
-      (println req)
+      (pp/pprint req)
       (if (clj-http.client/unexceptional-status? status)
         resp
         (slingshot.slingshot/throw+ resp "clj-http: STATUS %d %s" (:status %) resp)))))
