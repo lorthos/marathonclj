@@ -36,8 +36,11 @@
 
 (defn put
   [^Connection conn ^String uri {:keys [body] :as options}]
-  (json/decode (:body (http/put uri (merge (.http-opts conn) options
-                                           {:accept :json :body (json/encode body) :throw-exceptions throw-exceptions}))) true))
+  (http/with-middleware patch/middleware
+                        (json/decode (:body (http/put uri (merge (.http-opts conn) options
+                                                                 {:accept :json :content-type :json :body (json/encode body) :throw-exceptions throw-exceptions}))) true)
+                        )
+  )
 
 (defn get
   ([^Connection conn ^String uri]
