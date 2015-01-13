@@ -8,19 +8,15 @@ FIXME
 
 ## Implemented so far
 
-+ get-apps
-+ get-app
-+ delete-app
-+ create-app
-+ versions
-+ version
-
-
-
++ crud-app operations
++ version(s)
++ restart
++ task(s)
 + metrics
++ groups
 
 ##TODO
-+ api
++ missing api
 + doc
 + test
 
