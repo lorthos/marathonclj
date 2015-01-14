@@ -4,7 +4,10 @@ A simple Clojure client for the marathon rest api
 
 ## Usage
 
-FIXME
+        (apps/get-apps conn)
+        (apps/create-app conn app-descriptor)
+        (apps/update-app conn "001" {:cmd "ping 127.0.0.1"} true)
+        ;check tests for more samples
 
 ## Implemented so far
 
@@ -15,7 +18,10 @@ FIXME
 + metrics
 + groups
 + tasks
-
++ deployments
++ event subscriptions
++ queue
++ info
 
 ##TODO
 + missing api
