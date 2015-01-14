@@ -55,9 +55,20 @@
 
 (defn delete
   ([^Connection conn ^String uri]
-    (json/decode (:body (http/delete uri (merge (.http-opts conn)
-                                                {:accept :json :throw-exceptions throw-exceptions}))) true))
+    (http/with-middleware patch/middleware
+                          (json/decode (:body (http/delete uri (merge (.http-opts conn)
+                                                                      {:accept :json :content-type :json :throw-exceptions throw-exceptions}))) true)))
   ([^Connection conn ^String uri {:keys [body] :as options}]
-    (json/decode (:body (http/delete uri (merge (.http-opts conn) options
-                                                {:accept :json :body (json/encode body) :throw-exceptions throw-exceptions}))) true)))
+    (http/with-middleware patch/middleware
+                          (json/decode (:body (http/delete uri (merge (.http-opts conn) options
+                                                                      {:accept :json :content-type :json :body (json/encode body) :throw-exceptions throw-exceptions}))) true))))
+
+
+(defn ->opts
+  "Coerces arguments to a map"
+  [args]
+  (let [x (first args)]
+    (if (map? x)
+      x
+      (apply array-map args))))
 

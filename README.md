@@ -6,7 +6,7 @@ A simple Clojure client for the marathon rest api
 
         (apps/get-apps conn)
         (apps/create-app conn app-descriptor)
-        (apps/update-app conn "001" {:cmd "ping 127.0.0.1"} true)
+        (apps/update-app conn "001" {:cmd "ping 127.0.0.1"} :force true)
         ;check tests for more samples
 
 ## Implemented so far
