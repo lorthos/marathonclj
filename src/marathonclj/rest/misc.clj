@@ -9,8 +9,3 @@
   (r/get conn (r/url-with-path conn "metrics")))
 
 
-(comment
-  (metrics (Connection. "http://localhost:8080" {}))
-  )
-
-

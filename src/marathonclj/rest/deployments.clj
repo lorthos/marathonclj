@@ -10,8 +10,6 @@
 
 (defn delete-deployment
   "DELETE /v2/deployments/{deploymentId}"
-  [^Connection conn ^String deployment-id ^Boolean force?]
-  (r/delete conn (r/url-with-path conn "v2" "deployments" (if force?
-                                                            (str deployment-id "?scale=true")
-                                                            deployment-id)))
+  [^Connection conn ^String deployment-id & args]
+  (r/delete conn (r/url-with-path conn "v2" "deployments" deployment-id) {:query-params (r/->opts args)})
   )

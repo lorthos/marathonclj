@@ -22,14 +22,18 @@
   (testing "deployments"
     (is (not (nil? (do
                      (reset! deployments (d/get-deployments conn))
+                     (println @deployments)
                      @deployments))))
     )
-  (testing "delete-deployment"
-    (is (contains? (d/delete-deployment conn (->> @deployments first :id) true) :version))
+  (if (->> @deployments first :id)
+    (testing "delete-deployment"
+      (is (contains? (d/delete-deployment conn (->> @deployments first :id) :force true) :version))
+      )
     )
   (testing "delete app"
-    (is (thrown? Exception (apps/delete-app conn "001")))
+    (is (contains? (apps/delete-app conn "001") :deploymentId))
     )
+
   )
 
 
