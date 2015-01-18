@@ -1,11 +1,16 @@
 (ns marathonclj.rest.apps-test
   (:require [clojure.test :refer :all]
             [marathonclj.rest.apps :as apps]
-            [marathonclj.rest :as r])
+            [marathonclj.rest :as r]
+            [clojure.data.json :as json])
   (import marathonclj.rest.Connection)
   )
 
 (def app-descriptor (read-string (slurp "resources/app-descriptor1.edn")))
+
+(def http-server (clojure.data.json/read-str (slurp "resources/app-descriptor1.json") :key-fn keyword))
+
+http-server
 
 (def conn (r/Connection. "http://localhost:8080" {}))
 
@@ -62,5 +67,12 @@
 ;
 ;(apps/kill-task conn "001" false)
 
+
+(comment 
+(+ 1 1)
+(apps/create-app conn http-server)
+(apps/get-apps conn)
+
+)
 
 
