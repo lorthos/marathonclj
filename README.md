@@ -4,9 +4,23 @@ A simple Clojure client for the marathon rest api
 
 ## Usage
 
+With a descriptor like the following:
+
+    {
+    "id": "http",
+    "cmd": "python -m SimpleHTTPServer 9999",
+    "mem": 50,
+    "cpus": 0.1,
+    "instances": 1,
+    "constraints": [
+        ["hostname", "UNIQUE"]
+        ]
+    }
+
+
         (apps/get-apps conn)
         (apps/create-app conn app-descriptor)
-        (apps/update-app conn "001" {:cmd "ping 127.0.0.1"} :force true)
+        (apps/update-app conn "001" {:cmd "python -m SimpleHTTPServer 8888"} :force true)
         ;check tests for more samples
 
 ## Implemented so far

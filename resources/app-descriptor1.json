@@ -1,6 +1,6 @@
 {
     "id": "http",
-    "cmd": "python -m SimpleHTTPServer $PORT",
+    "cmd": "python -m SimpleHTTPServer 9999",
     "mem": 50,
     "cpus": 0.1,
     "instances": 1,

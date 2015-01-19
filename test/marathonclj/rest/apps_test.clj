@@ -72,6 +72,9 @@ http-server
 (+ 1 1)
 (apps/create-app conn http-server)
 (apps/get-apps conn)
+(apps/get-apps conn)
+conn
+(apps/delete-app conn "/http")
 
 )
 
