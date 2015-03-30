@@ -1,9 +1,7 @@
 (ns marathonclj.rest.apps-test
   (:require [clojure.test :refer :all]
-            [marathonclj.rest.apps :as apps]
-            [marathonclj.rest :as r]
-            [clojure.data.json :as json])
-  (import marathonclj.rest.Connection)
+            [marathonclj.rest.apps :as apps])
+  (:import marathonclj.rest.Connection)
   )
 
 (def app-descriptor (read-string (slurp "resources/app-descriptor1.edn")))
@@ -12,7 +10,7 @@
 
 http-server
 
-(def conn (r/Connection. "http://localhost:8080" {}))
+(def conn (Connection. "http://localhost:8080" {}))
 
 (def version (atom nil))
 

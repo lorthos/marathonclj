@@ -1,8 +1,6 @@
 (ns marathonclj.rest.tasks
-  (:require [marathonclj.rest :as r]
-            :reload-all)
-  (:import marathonclj.rest.Connection
-           clojure.lang.IPersistentMap))
+  (:require [marathonclj.rest :as r])
+  (:import marathonclj.rest.Connection))
 
 
 (defn get-tasks

@@ -1,8 +1,7 @@
 (ns marathonclj.rest.apps
-  (:require [marathonclj.rest :as r]
-            :reload-all)
+  (:require [marathonclj.rest :as r])
   (:import marathonclj.rest.Connection
-           clojure.lang.IPersistentMap))
+           (clojure.lang IPersistentMap)))
 
 
 (defn get-apps

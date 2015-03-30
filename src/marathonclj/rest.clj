@@ -4,8 +4,7 @@
             [cheshire.core :as json]
             [clojure.string :refer [join]]
             [marathonclj.patch :as patch])
-  (:import java.net.URLEncoder
-           clojure.lang.IPersistentMap))
+  (:import clojure.lang.IPersistentMap))
 
 (defrecord Connection
   [^String uri ^IPersistentMap http-opts])

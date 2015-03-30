@@ -1,6 +1,5 @@
 (ns marathonclj.rest.info
-  (:require [marathonclj.rest :as r]
-            :reload-all)
+  (:require [marathonclj.rest :as r])
   (:import marathonclj.rest.Connection))
 
 (defn server-info

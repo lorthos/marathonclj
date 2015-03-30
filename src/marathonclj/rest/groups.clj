@@ -1,6 +1,5 @@
 (ns marathonclj.rest.groups
-  (:require [marathonclj.rest :as r]
-            :reload-all)
+  (:require [marathonclj.rest :as r])
   (:import marathonclj.rest.Connection
            clojure.lang.IPersistentMap))
 

@@ -1,16 +1,13 @@
 (ns marathonclj.rest.groups-test
   (:require [clojure.test :refer :all]
             [marathonclj.rest.groups :as g]
-            [marathonclj.rest.apps :as apps]
-            [marathonclj.rest :as r])
-  (import marathonclj.rest.Connection)
+            [marathonclj.rest.apps :as apps])
+  (:import marathonclj.rest.Connection)
   )
 
 (def app-descriptor (read-string (slurp "resources/app-descriptor1.edn")))
 
-(def conn (r/Connection. "http://localhost:8080" {}))
-
-(def deployments (atom nil))
+(def conn (Connection. "http://localhost:8080" {}))
 
 
 (deftest deployments-functionality
