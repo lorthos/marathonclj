@@ -1,12 +1,13 @@
 (ns marathonclj.rest.apps-test
   (:require [clojure.test :refer :all]
-            [marathonclj.rest.apps :as apps])
+            [marathonclj.rest.apps :as apps]
+            [clojure.data.json :as json])
   (:import marathonclj.rest.Connection)
   )
 
 (def app-descriptor (read-string (slurp "resources/app-descriptor1.edn")))
 
-(def http-server (clojure.data.json/read-str (slurp "resources/app-descriptor1.json") :key-fn keyword))
+(def http-server (json/read-str (slurp "resources/app-descriptor1.json") :key-fn keyword))
 
 http-server
 
