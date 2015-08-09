@@ -25,6 +25,22 @@ With a descriptor like the following:
         (apps/update-app conn "001" {:cmd "python -m SimpleHTTPServer 8888"} :force true)
         ;check tests for more samples
 
+##Artifacts
+
+
+With Leiningen:
+
+        [marathonclj "0.1.0"]
+
+With Maven:
+
+        <dependency>
+          <groupId>marathonclj</groupId>
+          <artifactId>marathonclj</artifactId>
+          <version>0.1.0</version>
+        </dependency>
+
+
 ## Implemented so far
 
 + crud-app operations
