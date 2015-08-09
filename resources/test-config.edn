@@ -1,0 +1,4 @@
+{
+ :marathon-url "http://10.141.141.10:8080"
+ ;https://github.com/mesosphere/playa-mesos
+ }

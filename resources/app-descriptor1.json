@@ -1,5 +1,5 @@
 {
-    "id": "http",
+    "id": "http1",
     "cmd": "python -m SimpleHTTPServer 9999",
     "mem": 50,
     "cpus": 0.1,

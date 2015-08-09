@@ -1,4 +1,5 @@
 (ns marathonclj.rest.usage
+  (:refer-clojure :exclude [update])
   (:require [marathonclj.rest.apps :as apps]
             [clojure.data.json :as json]
             [marathonclj.rest.info :as info]
@@ -6,15 +7,12 @@
   (:import marathonclj.rest.Connection))
 
 
-
 (comment
-
 
   (def play-app
     (json/read-str (slurp "resources/play-hello.json") :key-fn keyword))
 
-  (def conn (Connection. "http://localhost:8080" {}))
-
+  (def conn (Connection. "http://10.141.141.10:8080" {}))
 
   (apps/create-app conn play-app)
 
@@ -24,7 +22,6 @@
 
   (info/server-info conn)
 
-
-
+  (apps/delete-app conn "hello")
 
   )
