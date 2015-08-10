@@ -1,0 +1,22 @@
+{
+  "id": "instance1",
+  "container": {
+    "docker": {
+      "image": "l0rth0s/aerospike-with-amc",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 8081, "hostPort": 0, "protocol": "tcp" },
+        { "containerPort": 3000, "hostPort": 0, "protocol": "tcp" },
+        { "containerPort": 3001, "hostPort": 0, "protocol": "tcp" },
+        { "containerPort": 3002, "hostPort": 0, "protocol": "tcp" },
+        { "containerPort": 3003, "hostPort": 0, "protocol": "tcp" }
+      ]
+    },
+    "type": "DOCKER",
+    "volumes": []
+  },
+  "args": [],
+  "cpus": 1,
+  "mem": 256.0,
+  "instances": 1
+}
