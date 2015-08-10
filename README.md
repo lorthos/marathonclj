@@ -54,7 +54,7 @@ With Maven:
 + info
 
 ##TODO
-+ missing api
++ missing api (0.9, 0.10)
 + doc
 + test
 
