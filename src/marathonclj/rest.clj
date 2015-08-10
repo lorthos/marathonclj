@@ -10,7 +10,7 @@
   [^String uri ^IPersistentMap http-opts])
 
 (def ^{:const true} slash "/")
-(def ^:dynamic throw-exceptions true)
+(def ^:dynamic *throw-exceptions* true)
 
 (defn url-with-path
   [^Connection conn & segments]
@@ -37,30 +37,30 @@
   [^Connection conn ^String uri {:keys [body] :as options}]
   (http/with-middleware patch/middleware
                         (json/decode (:body (http/put uri (merge (.http-opts conn) options
-                                                                 {:accept :json :content-type :json :body (json/encode body) :throw-exceptions throw-exceptions}))) true)
+                                                                 {:accept :json :content-type :json :body (json/encode body) :throw-exceptions *throw-exceptions*}))) true)
                         )
   )
 
 (defn get
   ([^Connection conn ^String uri]
-    (json/decode (:body (http/get uri (merge (.http-opts conn) {:accept :json :throw-exceptions throw-exceptions}))) true))
+    (json/decode (:body (http/get uri (merge (.http-opts conn) {:accept :json :throw-exceptions *throw-exceptions*}))) true))
   ([^Connection conn ^String uri options]
     (json/decode (:body (http/get uri (merge (.http-opts conn) options
-                                             {:accept :json :throw-exceptions throw-exceptions}))) true)))
+                                             {:accept :json :throw-exceptions *throw-exceptions*}))) true)))
 
 (defn head
   [^Connection conn ^String uri]
-  (http/head uri (merge (.http-opts conn) {:accept :json :throw-exceptions throw-exceptions})))
+  (http/head uri (merge (.http-opts conn) {:accept :json :throw-exceptions *throw-exceptions*})))
 
 (defn delete
   ([^Connection conn ^String uri]
     (http/with-middleware patch/middleware
                           (json/decode (:body (http/delete uri (merge (.http-opts conn)
-                                                                      {:accept :json :content-type :json :throw-exceptions throw-exceptions}))) true)))
+                                                                      {:accept :json :content-type :json :throw-exceptions *throw-exceptions*}))) true)))
   ([^Connection conn ^String uri {:keys [body] :as options}]
     (http/with-middleware patch/middleware
                           (json/decode (:body (http/delete uri (merge (.http-opts conn) options
-                                                                      {:accept :json :content-type :json :body (json/encode body) :throw-exceptions throw-exceptions}))) true))))
+                                                                      {:accept :json :content-type :json :body (json/encode body) :throw-exceptions *throw-exceptions*}))) true))))
 
 
 (defn ->opts

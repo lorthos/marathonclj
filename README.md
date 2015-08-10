@@ -6,24 +6,26 @@ A simple Clojure client for the marathon rest api
 
 ## Usage
 
-With a descriptor like the following:
 
-    {
-    "id": "http",
-    "cmd": "python -m SimpleHTTPServer 9999",
-    "mem": 50,
-    "cpus": 0.1,
-    "instances": 1,
-    "constraints": [
-        ["hostname", "UNIQUE"]
-        ]
-    }
+        (def docker-container
+        (json/read-str (slurp "resources/docker_example.json") :key-fn keyword))
 
+
+        (def conn (Connection. "http://10.141.141.10:8080" {}))
+
+        (apps/create-app conn docker-container)
+
+        (deployments/get-deployments conn)
 
         (apps/get-apps conn)
-        (apps/create-app conn app-descriptor)
-        (apps/update-app conn "001" {:cmd "python -m SimpleHTTPServer 8888"} :force true)
-        ;check tests for more samples
+
+        (pp/pprint (->> (apps/get-apps conn)
+                          :apps
+                          first))
+
+        (info/server-info conn)
+
+        (apps/delete-app conn "instance1")
 
 ##Artifacts
 
