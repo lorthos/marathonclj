@@ -19,10 +19,6 @@ A simple Clojure client for the marathon rest api
 
         (apps/get-apps conn)
 
-        (pp/pprint (->> (apps/get-apps conn)
-                          :apps
-                          first))
-
         (info/server-info conn)
 
         (apps/delete-app conn "instance1")
