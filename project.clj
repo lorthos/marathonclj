@@ -1,7 +1,7 @@
 (defproject marathonclj "0.1.1-SNAPSHOT"
   :description "Marathon Rest Client for Clojure "
   :url "https://github.com/codemomentum/marathonclj"
-  :dependencies [[org.clojure/clojure "1.7.0-alpha5"]
+  :dependencies [[org.clojure/clojure "1.7.0"]
                  [cheshire "5.3.1"]
                  [org.clojure/data.json "0.2.5"]
                  [clj-http "0.9.1" :exclusions [org.clojure/clojure]]
