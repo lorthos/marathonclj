@@ -1,4 +1,4 @@
-(defproject marathonclj "0.1.0"
+(defproject marathonclj "0.1.1-SNAPSHOT"
   :description "Marathon Rest Client for Clojure "
   :url "https://github.com/codemomentum/marathonclj"
   :dependencies [[org.clojure/clojure "1.7.0-alpha5"]
