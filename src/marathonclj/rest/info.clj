@@ -1,8 +1,7 @@
 (ns marathonclj.rest.info
-  (:require [marathonclj.rest :as r])
-  (:import marathonclj.rest.Connection))
+  (:require [marathonclj.common :as r]))
 
 (defn server-info
   "GET /v2/info"
-  [^Connection conn]
-  (r/get conn (r/url-with-path conn "v2" "info")))
+  []
+  (r/get  (r/url-with-path  "v2" "info")))

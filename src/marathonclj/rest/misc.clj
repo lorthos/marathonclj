@@ -1,11 +1,10 @@
 (ns marathonclj.rest.misc
-  (:require [marathonclj.rest :as r])
-  (:import marathonclj.rest.Connection))
+  (:require [marathonclj.common :as r]))
 
 
 (defn metrics
   "GET /metrics"
-  [^Connection conn]
-  (r/get conn (r/url-with-path conn "metrics")))
+  []
+  (r/get (r/url-with-path "metrics")))
 
 

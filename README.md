@@ -7,21 +7,24 @@ A simple Clojure client for the marathon rest api
 ## Usage
 
 
-        (def docker-container
-        (json/read-str (slurp "resources/docker_example.json") :key-fn keyword))
+          (def docker-container
+            (json/read-str (slurp "resources/docker_example.json") :key-fn keyword))
 
+          (c/init! (Connection. "http://10.141.141.10:8080" {}))
 
-        (def conn (Connection. "http://10.141.141.10:8080" {}))
+          (apps/create-app docker-container)
 
-        (apps/create-app conn docker-container)
+          (deployments/get-deployments)
 
-        (deployments/get-deployments conn)
+          (apps/get-apps)
 
-        (apps/get-apps conn)
+          (pp/pprint (->> (apps/get-apps)
+                          :apps
+                          first))
 
-        (info/server-info conn)
+          (info/server-info)
 
-        (apps/delete-app conn "instance1")
+          (apps/delete-app "instance1")
 
 ##Artifacts
 

@@ -1,8 +1,7 @@
 (ns marathonclj.rest.queue
-  (:require [marathonclj.rest :as r])
-  (:import marathonclj.rest.Connection))
+  (:require [marathonclj.common :as r]))
 
 (defn get-queue-content
   "GET /v2/queue"
-  [^Connection conn]
-  (r/get conn (r/url-with-path conn "v2" "queue")))
+  []
+  (r/get (r/url-with-path "v2" "queue")))
