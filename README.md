@@ -31,14 +31,14 @@ A simple Clojure client for the marathon rest api
 
 With Leiningen:
 
-        [marathonclj "0.1.0"]
+        [marathonclj "0.1.1"]
 
 With Maven:
 
         <dependency>
           <groupId>marathonclj</groupId>
           <artifactId>marathonclj</artifactId>
-          <version>0.1.0</version>
+          <version>0.1.1</version>
         </dependency>
 
 
