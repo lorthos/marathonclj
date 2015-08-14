@@ -28,7 +28,7 @@ A simple Clojure client for the marathon rest api
 
 ##Artifacts
 
-[![Clojars Project](http://clojars.org/marathonclj/latest-version.svg)]
+[![Clojars Project](http://clojars.org/marathonclj/latest-version.svg)](http://clojars.org/marathonclj)
 
 ## Implemented so far
 
