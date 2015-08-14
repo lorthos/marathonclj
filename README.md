@@ -28,19 +28,7 @@ A simple Clojure client for the marathon rest api
 
 ##Artifacts
 
-
-With Leiningen:
-
-        [marathonclj "0.1.1"]
-
-With Maven:
-
-        <dependency>
-          <groupId>marathonclj</groupId>
-          <artifactId>marathonclj</artifactId>
-          <version>0.1.1</version>
-        </dependency>
-
+[![Clojars Project](http://clojars.org/marathonclj/latest-version.svg)]
 
 ## Implemented so far
 
