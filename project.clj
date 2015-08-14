@@ -1,4 +1,4 @@
-(defproject marathonclj "0.1.1-SNAPSHOT"
+(defproject marathonclj "0.1.1"
   :description "Marathon Rest Client for Clojure "
   :url "https://github.com/codemomentum/marathonclj"
   :dependencies [[org.clojure/clojure "1.7.0"]
@@ -17,4 +17,5 @@
   ;; Leiningen how to find your Clojars account credentials.
   ;; You set those up already, right?
   :deploy-repositories [["clojars" {:creds :gpg}]]
+  :lein-release {:deploy-via :clojars}
   )
