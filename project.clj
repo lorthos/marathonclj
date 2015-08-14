@@ -17,5 +17,4 @@
   ;; Leiningen how to find your Clojars account credentials.
   ;; You set those up already, right?
   :deploy-repositories [["clojars" {:creds :gpg}]]
-  :lein-release {:deploy-via :clojars}
   )
