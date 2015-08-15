@@ -45,10 +45,9 @@ A simple Clojure client for the marathon rest api
 + info
 
 ##TODO
-+ missing api (0.9, 0.10)
-+ doc
-+ test
-
++ missing api (0.9 -> #1801)
++ some doc
++ more tests
 
 ## License
 
