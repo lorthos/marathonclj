@@ -2,7 +2,7 @@
 
 A simple Clojure client for the marathon rest api
 
-[![Build Status](https://travis-ci.org/codemomentum/marathonclj.png)](https://travis-ci.org/codemomentum/marathonclj.png)
+[![Build Status](https://travis-ci.org/lorthos/marathonclj.png)](https://travis-ci.org/lorthos/marathonclj.png)
 
 ## Usage
 

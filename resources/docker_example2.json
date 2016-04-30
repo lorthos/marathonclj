@@ -1,0 +1,29 @@
+{
+  "id": "instance2",
+  "container": {
+    "docker": {
+      "image": "l0rth0s/scipyserver",
+      "network": "BRIDGE",
+      "portMappings": [
+        {
+          "containerPort": 8888,
+          "hostPort": 0,
+          "protocol": "tcp"
+        }
+      ],
+      "parameters": [
+        {
+          "key": "env",
+          "value": "PASSWORD=asd1"
+        }
+      ],
+      "privileged": true
+    },
+    "type": "DOCKER",
+    "volumes": []
+  },
+  "args": [],
+  "cpus": 0.01,
+  "mem": 256.0,
+  "instances": 1
+}
