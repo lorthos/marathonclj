@@ -34,38 +34,48 @@
    (http/with-middleware patch/middleware
                          (json/decode (:body (http/post uri
                                                         (merge (.http-opts @*mconn*) options
-                                                               {:accept :json :content-type :json :body (json/encode body) :throw-exceptions *throw-exceptions*})
-                                                        )) true)
-                         )))
+                                                               {:accept           :json
+                                                                :content-type     :json
+                                                                :body             (json/encode body)
+                                                                :throw-exceptions *throw-exceptions*}))) true))))
 
 (defn put
   [^String uri {:keys [body] :as options}]
   (http/with-middleware patch/middleware
                         (json/decode (:body (http/put uri (merge (.http-opts @*mconn*) options
-                                                                 {:accept :json :content-type :json :body (json/encode body) :throw-exceptions *throw-exceptions*}))) true)
-                        )
-  )
+                                                                 {:accept           :json
+                                                                  :content-type     :json
+                                                                  :body             (json/encode body)
+                                                                  :throw-exceptions *throw-exceptions*}))) true)))
 
 (defn get
   ([^String uri]
-   (json/decode (:body (http/get uri (merge (.http-opts @*mconn*) {:accept :json :throw-exceptions *throw-exceptions*}))) true))
+   (json/decode (:body (http/get uri (merge (.http-opts @*mconn*) {:accept           :json
+                                                                   :throw-exceptions *throw-exceptions*}))) true))
   ([^String uri options]
    (json/decode (:body (http/get uri (merge (.http-opts @*mconn*) options
-                                            {:accept :json :throw-exceptions *throw-exceptions*}))) true)))
+                                            {:accept           :json
+                                             :throw-exceptions *throw-exceptions*}))) true)))
 
 (defn head
   [^String uri]
-  (http/head uri (merge (.http-opts @*mconn*) {:accept :json :throw-exceptions *throw-exceptions*})))
+  (http/head uri (merge (.http-opts @*mconn*) {:accept           :json
+                                               :throw-exceptions *throw-exceptions*})))
 
 (defn delete
   ([^String uri]
    (http/with-middleware patch/middleware
                          (json/decode (:body (http/delete uri (merge (.http-opts @*mconn*)
-                                                                     {:accept :json :content-type :json :throw-exceptions *throw-exceptions*}))) true)))
+                                                                     {:accept           :json
+                                                                      :content-type     :json
+                                                                      :throw-exceptions *throw-exceptions*}))) true)))
   ([^String uri {:keys [body] :as options}]
    (http/with-middleware patch/middleware
                          (json/decode (:body (http/delete uri (merge (.http-opts @*mconn*) options
-                                                                     {:accept :json :content-type :json :body (json/encode body) :throw-exceptions *throw-exceptions*}))) true))))
+                                                                     {:accept           :json
+                                                                      :content-type     :json
+                                                                      :body             (json/encode body)
+                                                                      :throw-exceptions *throw-exceptions*}))) true))))
 
 
 (defn ->opts
