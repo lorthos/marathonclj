@@ -1,3 +1,7 @@
 # Introduction to marathonclj
 
-TODO: write [great documentation](http://jacobian.org/writing/what-to-write/)
+## Development Notes
+
+Start Marathon in development mode
+
+        env MESOS_WORK_DIR="/tmp/mesos/local" ./bin/start --master local --zk zk://localhost:2181/marathonn

@@ -15,7 +15,7 @@
   (def docker-container
     (json/read-str (slurp "resources/docker_example2.json") :key-fn keyword))
 
-  (c/init! (Connection. "http://10.141.141.10:8080" {}))
+  (c/init! (Connection. "http://localhost:8080" {}))
 
   (apps/create-app docker-container)
 
@@ -34,4 +34,28 @@
   (apps/delete-app "instance1")
   (apps/delete-app "instance2")
 
+  )
+
+(comment
+
+  (def hello-example
+    (json/read-str (slurp "resources/marathon-hello.json") :key-fn keyword))
+
+  (c/init! (Connection. "http://localhost:8080" {}))
+
+  (apps/create-app hello-example)
+
+  (deployments/get-deployments)
+
+  (queue/get-queue-content)
+
+  (apps/get-apps)
+
+  (pp/pprint (->> (apps/get-apps)
+                  :apps
+                  first))
+
+  (info/server-info)
+
+  (apps/delete-app "basic-0")
   )
