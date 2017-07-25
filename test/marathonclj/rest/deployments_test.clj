@@ -9,7 +9,25 @@
 
 (def app-descriptor (read-string (slurp "resources/app-descriptor1.edn")))
 (def deployments (atom nil))
-(c/init! (Connection. (:marathon-url e/props) {}))
+
+
+(defn test-wrapper
+  [f]
+  (let [marathon-available?
+        (try
+          (assert (not (nil? (slurp (:marathon-url e/props)))))
+          (c/init! (Connection. (:marathon-url e/props) {}))
+          (println "marathon available...")
+          true
+          (catch Exception e
+            (.printStackTrace e)
+            (println "skipping test...")
+            false))]
+    (if marathon-available?
+      (f))))
+
+(use-fixtures :once test-wrapper)
+
 
 (deftest deployments-functionality
   (testing "verify that no app exists"
